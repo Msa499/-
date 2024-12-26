@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وقتك يهمنا</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="clock"></div>
+        </div>
+
+        <div class="content">
+            <h1>مرحبًا في "وقتك يهمنا"!</h1>
+            <p>نحن هنا لمساعدتك على تنظيم وقتك بطريقة ذكية وفعّالة.</p>
+            <a href="file2.html" class="button">سجل هنا يا بطل الحكايه</a>
+        </div>
+
+        <div class="motivation">
+            <p>انت بطل الحكايه! اسعي وعافر، ده ربنا حكم في الطريق ده عشان انت قدها.</p>
+        </div>
+    </div>
+</body>
+</html>
+/* التأثيرات والتحريك للخلفية */
+@keyframes rotateClock {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('clock-bg.jpg'); /* ضع صورة ساعة هنا */
+    background-size: cover;
+    background-position: center;
+    animation: rotateClock 60s linear infinite;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    color: white;
+    z-index: 1;
+}
+
+.button {
+    background-color: #FF5733;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #C0392B;
+}
+
+.motivation {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
